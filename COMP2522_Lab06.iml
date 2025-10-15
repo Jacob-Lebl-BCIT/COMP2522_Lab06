@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../week 6/COMP2522_Lab06">
+      <sourceFolder url="file://$MODULE_DIR$/../../../week 6/COMP2522_Lab06/src/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../week 6/COMP2522_Lab06/src/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../week 6/COMP2522_Lab06/src/tests" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
