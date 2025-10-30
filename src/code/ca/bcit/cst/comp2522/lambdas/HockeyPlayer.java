@@ -42,6 +42,43 @@ public class HockeyPlayer
     }
 
     /**
+     * Set's the player's position after validating it with
+     * {@link #validatePosition(String) validatePosition}.
+     * @param position
+     */
+    public void setPosition(final String position)
+    {
+        this.position = validatePosition(position);
+    }
+
+    /**
+     * Gets the player's position.
+     * @return {@link #position position}
+     */
+    public String getPosition()
+    {
+        return position;
+    }
+
+    //TODO javadoc
+    public int getGoals()
+    {
+        return goals;
+    }
+
+    //TODO javadoc
+    public void setGoals(final int goals)
+    {
+        this.goals = validateGoals(goals);
+    }
+
+    //TODO javadoc
+    public void addGoal()
+    {
+        goals += 1;
+    }
+
+    /**
      * validateGoals ensures that the given goals are not negative.
      *
      * @param goals
@@ -112,6 +149,7 @@ public class HockeyPlayer
         }
 
         String formattedPosition;
+
         formattedPosition = position.trim().toUpperCase();
 
         if (formattedPosition.equals(FORWARD) ||
