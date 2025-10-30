@@ -1,5 +1,12 @@
 package ca.bcit.cst.comp2522.lambdas;
 
+/**
+ * HockeyPlayer Represents a hockey player with basic attributes like
+ * name, position, birth year, and goals scored.
+ *
+ * @author Jacob Lebl, Samuel Pita
+ * @version 2025
+ */
 public class HockeyPlayer
 {
     private final String name;
@@ -12,12 +19,61 @@ public class HockeyPlayer
     public static final String DEFENCE = "D";
     public static final String GOALIE  = "G";
 
+    public static final int MINIMUM_NON_NEGATIVE_VALUE = 0;
+
+    /**
+     * Constructs a new HockeyPlayer with the specified attributes.
+     *
+     * @param name        the player's name
+     * @param position    the player's position (F, D, or G)
+     * @param yearOfBirth the player's birth year
+     * @param goals       number of goals scored by the player
+     * @throws IllegalArgumentException if any parameter is invalid
+     */
     public HockeyPlayer(final String name,
                         final String position,
                         final int yearOfBirth,
                         final int goals)
     {
+        this.name        = validateName(name);
+        this.position    = validatePosition(position);
+        this.yearOfBirth = validateYearOfBirth(yearOfBirth);
+        this.goals       = validateGoals(goals);
+    }
 
+    /**
+     * validateGoals ensures that the given goals are not negative.
+     *
+     * @param goals
+     * @return goals if valid
+     * @throws IllegalArgumentException if goals are less than {@value MINIMUM_NON_NEGATIVE_VALUE}
+     */
+    private int validateGoals(final int goals)
+    {
+        if (goals >= MINIMUM_NON_NEGATIVE_VALUE)
+        {
+            return goals;
+        }
+        throw new IllegalArgumentException("goals cannot be less than " +
+                                           MINIMUM_NON_NEGATIVE_VALUE);
+    }
+
+    /**
+     * validateYearOfBirth ensures that the given year is not negative.
+     *
+     * @param yearOfBirth
+     * @return yearOfBirth if valid
+     * @throws IllegalArgumentException when year of birth is < {@value MINIMUM_NON_NEGATIVE_VALUE}
+     */
+    private int validateYearOfBirth(final int yearOfBirth)
+    {
+        if (yearOfBirth >= MINIMUM_NON_NEGATIVE_VALUE)
+        {
+            return yearOfBirth;
+        }
+
+        throw new IllegalArgumentException("yearOfBirth cannot be less than " +
+                                           MINIMUM_NON_NEGATIVE_VALUE);
     }
 
 
@@ -62,7 +118,7 @@ public class HockeyPlayer
             formattedPosition.equals(DEFENCE) ||
             formattedPosition.equals(GOALIE))
         {
-            return position;
+            return formattedPosition;
         }
 
         throw new IllegalArgumentException("position is not one of constants FORWARD," +
@@ -70,5 +126,5 @@ public class HockeyPlayer
 
     }
 
-    ;
+
 }
