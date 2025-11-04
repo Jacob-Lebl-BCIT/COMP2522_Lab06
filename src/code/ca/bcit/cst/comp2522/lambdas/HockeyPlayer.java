@@ -60,19 +60,46 @@ public class HockeyPlayer
         return position;
     }
 
-    //TODO javadoc
+    /**
+     * Gets the player's name.
+     * @return the player's name
+     */
+    public String getName()
+    {
+        return name;
+    }
+
+    /**
+     * Gets the player's year of birth.
+     * @return the player's year of birth
+     */
+    public int getYearOfBirth()
+    {
+        return yearOfBirth;
+    }
+
+    /**
+     * Gets the number of goals scored by the player.
+     * @return the number of goals
+     */
     public int getGoals()
     {
         return goals;
     }
 
-    //TODO javadoc
+    /**
+     * Sets the number of goals scored by the player.
+     * @param goals the new number of goals
+     * @throws IllegalArgumentException if goals is negative
+     */
     public void setGoals(final int goals)
     {
         this.goals = validateGoals(goals);
     }
 
-    //TODO javadoc
+    /**
+     * Increments the player's goal count by one.
+     */
     public void addGoal()
     {
         goals += 1;
