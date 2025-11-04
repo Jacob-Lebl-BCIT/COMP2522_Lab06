@@ -15,9 +15,10 @@ public class HockeyPlayer
     private       int    goals;
 
 
-    public static final String FORWARD = "F";
-    public static final String DEFENCE = "D";
-    public static final String GOALIE  = "G";
+    public static final int    GOAL_INCREMENT = 1;
+    public static final String FORWARD        = "F";
+    public static final String DEFENCE        = "D";
+    public static final String GOALIE         = "G";
 
     public static final int MINIMUM_NON_NEGATIVE_VALUE = 0;
 
@@ -42,8 +43,9 @@ public class HockeyPlayer
     }
 
     /**
-     * Set's the player's position after validating it with
+     * Sets the player's position after validating it with
      * {@link #validatePosition(String) validatePosition}.
+     *
      * @param position
      */
     public void setPosition(final String position)
@@ -53,6 +55,7 @@ public class HockeyPlayer
 
     /**
      * Gets the player's position.
+     *
      * @return {@link #position position}
      */
     public String getPosition()
@@ -60,22 +63,33 @@ public class HockeyPlayer
         return position;
     }
 
-    //TODO javadoc
+    /**
+     * Gets the player's number of goals.
+     *
+     * @return goals
+     */
     public int getGoals()
     {
         return goals;
     }
 
-    //TODO javadoc
+    /**
+     * Sets the player's number of goals after validating it with
+     * {@link #validateGoals(int) validateGoals}.
+     *
+     * @param goals
+     */
     public void setGoals(final int goals)
     {
         this.goals = validateGoals(goals);
     }
 
-    //TODO javadoc
+    /**
+     * Increments the player's goals by {@value GOAL_INCREMENT}.
+     */
     public void addGoal()
     {
-        goals += 1;
+        goals += GOAL_INCREMENT;
     }
 
     /**
