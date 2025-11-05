@@ -19,8 +19,8 @@ import java.util.function.UnaryOperator;
  */
 public class Main
 {
-    private static final int CURRENT_YEAR = 2025;
-    private static final int MIN_AGE_FOR_ELIGIBILITY = 20;
+    private static final int CURRENT_YEAR              = 2025;
+    private static final int MIN_AGE_FOR_ELIGIBILITY   = 20;
     private static final int MIN_GOALS_FOR_ELIGIBILITY = 15;
     private static final int MIN_GOALS_FOR_HIGH_SCORER = 20;
 
@@ -54,7 +54,7 @@ public class Main
         final HockeyTeam team;
         final List<HockeyPlayer> roster;
 
-        team = sampleTeam();
+        team   = sampleTeam();
         roster = team.getRoster();
 
         System.out.println("=== BCIT Blizzards Hockey Team ===\n");
@@ -114,7 +114,7 @@ public class Main
 
         System.out.println("--- Task 2: Predicate<HockeyPlayer> ---");
 
-        isForward = player -> player.getPosition().equals(HockeyPlayer.FORWARD);
+        isForward      = player -> player.getPosition().equals(HockeyPlayer.FORWARD);
         has20PlusGoals = player -> player.getGoals() >= MIN_GOALS_FOR_HIGH_SCORER;
 
         System.out.println("Forwards with 20+ goals:");
@@ -245,7 +245,8 @@ public class Main
 
         System.out.println("--- Task 8: Custom Functional Interface (EligibilityRule) ---");
 
-        eligibilityRule = (player, minAge, minGoals, currentYear) -> {
+        eligibilityRule = (player, minAge, minGoals, currentYear) ->
+        {
             final int age;
 
             age = currentYear - player.getYearOfBirth();
@@ -257,7 +258,8 @@ public class Main
         for (final HockeyPlayer player : roster)
         {
             if (eligibilityRule.test(player, MIN_AGE_FOR_ELIGIBILITY,
-                                     MIN_GOALS_FOR_ELIGIBILITY, CURRENT_YEAR))
+                                             MIN_GOALS_FOR_ELIGIBILITY,
+                                             CURRENT_YEAR))
             {
                 final int age;
 
