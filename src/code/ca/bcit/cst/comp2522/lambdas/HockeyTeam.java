@@ -18,20 +18,43 @@ public class HockeyTeam
      *
      * @param name   the team's name
      * @param roster the list of players on the team
-     * @throws IllegalArgumentException if name is null or blank, or if roster is null
      */
     public HockeyTeam(final String name, final List<HockeyPlayer> roster)
     {
-        if (name == null || name.isBlank())
+        this.name = validateName(name);
+        this.roster = validateRoster(roster);
+    }
+
+    /**
+     * Validates the team's name.
+     *
+     * @param name the name to validate
+     * @return the validated name
+     * @throws IllegalArgumentException if the name is null or blank
+     */
+    public static String validateName(final String name)
+    {
+        if (name == null || name.trim().isBlank())
         {
-            throw new IllegalArgumentException("Team name cannot be null or blank");
+            throw new IllegalArgumentException("Name cannot be null or blank");
         }
+        return name;
+    }
+
+    /**
+     * Validates the team's roster.
+     *
+     * @param roster the roster to validate
+     * @return the validated roster
+     * @throws IllegalArgumentException if the roster is null
+     */
+    public static List<HockeyPlayer> validateRoster(final List<HockeyPlayer> roster)
+    {
         if (roster == null)
         {
             throw new IllegalArgumentException("Roster cannot be null");
         }
-        this.name = name;
-        this.roster = roster;
+        return roster;
     }
 
     /**

@@ -98,14 +98,6 @@ public class HockeyPlayer
     }
 
     /**
-     * Increments the player's goal count by one.
-     */
-    public void addGoal()
-    {
-        goals += 1;
-    }
-
-    /**
      * validateGoals ensures that the given goals are not negative.
      *
      * @param goals
@@ -152,7 +144,7 @@ public class HockeyPlayer
     {
         if (name == null || name.isBlank())
         {
-            throw new IllegalArgumentException("Name cannot be null or empty");
+            throw new IllegalArgumentException("Name cannot be null or blank");
         }
         return name;
     }
